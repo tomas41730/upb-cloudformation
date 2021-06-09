@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform:
+- AWS::Serverless-2016-10-31
+Description: Lambda CloudFormation Lab
+Resources:
+  MyLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: lambda.handler
+      Runtime: python3.6
+      CodeUri: s3://mysite-tc-upb-2021/366fdb9b3174b218ad6d893d1ac13782
