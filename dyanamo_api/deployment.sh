@@ -21,9 +21,6 @@ if [[ $BUILD == 1 ]]
 then
     pip3 install --target package -r requirements.txt
     cp -a src/. package/
-    # zip -r9 ../function.zip .
-    # cd ../src
-    # zip -g ../function.zip *
 fi
 
 if [[ $PACKAGE == 1 ]]
@@ -33,5 +30,5 @@ fi
 
 if [[ $DEPLOY == 1 ]]
 then
-    aws cloudformation deploy --template-file packaged-template.json --stack-name application-stack2 --capabilities CAPABILITY_IAM
+    aws cloudformation deploy --template-file packaged-template.json --stack-name application-stack2 --capabilities CAPABILITY_NAMED_IAM
 fi
